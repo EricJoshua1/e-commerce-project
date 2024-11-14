@@ -5,6 +5,8 @@ import Link from 'next/link'
 
 import classes from './index.module.scss'
 import Image from 'next/image'
+import { HeaderNav } from '../Nav'
+import MobileNav from '../MobileNav'
 
 const HeaderComponent = ({header} : {header: Header}) => {
   return (
@@ -13,6 +15,9 @@ const HeaderComponent = ({header} : {header: Header}) => {
             <Link href='/'>
                 <Image src="/logo-littlemore.svg" alt="logo" width={170} height={50} />
             </Link>
+
+            <HeaderNav header={header}/>
+            <MobileNav header={header}/>
         </Gutter>
     </nav>
   )
