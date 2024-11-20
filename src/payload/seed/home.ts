@@ -15,7 +15,7 @@ export const home: Partial<Page> = {
       {
         children: [
           {
-            text: 'Payload E-Commerce Store',
+            text: 'Little More Store',
           },
         ],
         type: 'h1',
@@ -23,7 +23,7 @@ export const home: Partial<Page> = {
       {
         children: [
           {
-            text: 'Welcome to your store! ',
+            text: 'Welcome to the store where all is available! ',
           },
           {
             type: 'link',
