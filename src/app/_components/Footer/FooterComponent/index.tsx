@@ -15,7 +15,15 @@ const FooterComponent = () => {
       <Gutter>
         <ul className={classes.inclusions}>
           {inclusions.map((inclusions, index) => (
-           
+            <li key={inclusions.title}>
+              <Image
+                src={inclusions.icon}
+                alt={inclusions.title}
+                width={36}
+                height={36}
+                className={classes.icon}
+               />
+            </li>
           ))}
         </ul>
       </Gutter>
