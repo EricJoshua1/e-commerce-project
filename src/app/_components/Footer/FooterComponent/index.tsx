@@ -8,8 +8,19 @@ import { usePathname } from 'next/navigation'
 import { Gutter } from '../../Gutter'
 import Image from 'next/image'
 
-const FooterComponent = () => {
-  const pathname = usePathname();
+import type { Footer as FooterType } from '../../../../payload/payload-types'
+
+interface FooterComponentProps {
+  footer: FooterType | null // Accept footer as a prop
+}
+
+const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
+  const pathname = usePathname()
+
+  if (!footer) {
+    // Return a fallback if no footer data is provided
+    return <footer className={classes.hide}>Footer data is not available.</footer>
+  }
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
@@ -22,7 +33,7 @@ const FooterComponent = () => {
                 width={36}
                 height={36}
                 className={classes.icon}
-               />
+              />
             </li>
           ))}
         </ul>
