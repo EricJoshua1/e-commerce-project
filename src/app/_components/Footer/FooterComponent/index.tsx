@@ -25,7 +25,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
         <ul className={classes.inclusions}>
-          {inclusions.map((inclusions, index) => (
+          {inclusions.map(inclusions => (
             <li key={inclusions.title}>
               <Image
                 src={inclusions.icon}
