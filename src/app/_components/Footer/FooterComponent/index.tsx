@@ -9,6 +9,7 @@ import { Gutter } from '../../Gutter'
 import Image from 'next/image'
 
 import type { Footer as FooterType } from '../../../../payload/payload-types'
+import Link from 'next/link'
 
 interface FooterComponentProps {
   footer: FooterType | null // Accept footer as a prop
@@ -40,7 +41,15 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
           ))}
         </ul>
       </Gutter>
-      <div className={classes.footer}></div>
+      <div className={classes.footer}>
+        <Gutter>
+          <div className={classes.wrap}>
+            <Link href="/">
+              <Image src="/logo-littlemore.svg" alt="logo" width={170} height={50} />
+            </Link>
+          </div>
+        </Gutter>
+      </div>
     </footer>
   )
 }
