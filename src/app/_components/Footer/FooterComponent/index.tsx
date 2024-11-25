@@ -35,6 +35,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
                 className={classes.icon}
               />
               <h5 className={classes.title}>{inclusions.title}</h5>
+              <p>{inclusions.description} </p>
             </li>
           ))}
         </ul>
