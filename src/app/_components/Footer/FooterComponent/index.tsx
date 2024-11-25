@@ -40,6 +40,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
           ))}
         </ul>
       </Gutter>
+      <div className={classes.footer}></div>
     </footer>
   )
 }
