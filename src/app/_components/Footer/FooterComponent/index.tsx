@@ -34,6 +34,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }) => {
                 height={36}
                 className={classes.icon}
               />
+              <h5 className={classes.title}>{inclusions.title}</h5>
             </li>
           ))}
         </ul>
