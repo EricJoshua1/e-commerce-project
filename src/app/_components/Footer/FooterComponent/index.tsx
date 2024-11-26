@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { Gutter } from '../../Gutter'
 import Image from 'next/image'
 
-import type { Footer, Footer as FooterType } from '../../../../payload/payload-types'
+import type { Footer, Footer as FooterType, Media } from '../../../../payload/payload-types'
 import Link from 'next/link'
 import { Button } from '../../Button'
 
@@ -52,7 +52,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }: { footer: F
             <p>{footer.copyright}</p>
             <div className={classes.socialLinks}>
               {navItems.map(item => {
-                const icon = ''
+                const icon = item?.link?.icon as Media
 
                 return (
                   <Button
@@ -62,7 +62,13 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footer }: { footer: F
                     newTab={true}
                     className={classes.socialLinkItem}
                   >
-                    {item.link.label}
+                    <Image
+                      src={icon.url}
+                      alt={item.link.label}
+                      width={24}
+                      height={24}
+                      className={classes.socialIcon}
+                    />
                   </Button>
                 )
               })}
