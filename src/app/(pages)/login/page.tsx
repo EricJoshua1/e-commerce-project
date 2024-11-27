@@ -14,13 +14,7 @@ export default async function Login() {
     validUserRedirect: `/account?warning=${encodeURIComponent('You are already logged in.')}`,
   })
 
-  return (
-    <Gutter className={classes.login}>
-      <RenderParams className={classes.params} />
-      <h1>Log in</h1>
-      <LoginForm />
-    </Gutter>
-  )
+  return <section></section>
 }
 
 export const metadata: Metadata = {
