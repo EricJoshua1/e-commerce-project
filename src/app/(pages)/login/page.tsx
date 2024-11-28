@@ -30,7 +30,16 @@ export default async function Login() {
         </Link>
       </div>
 
-      <div></div>
+      <div className={classes.formWrapper}>
+        <div className={classes.formContainer}>
+          <RenderParams className={classes.params} />
+          <div className={classes.formTitle}>
+            <h3>Welcome</h3>
+            <Image src="/assets/icons/hand.png" alt="hand" width={30} height={30} />
+          </div>
+          <p>Please login here</p>
+        </div>
+      </div>
     </section>
   )
 }
