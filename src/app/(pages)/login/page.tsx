@@ -8,13 +8,18 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
+import Link from 'next/link'
 
 export default async function Login() {
   await getMeUser({
     validUserRedirect: `/account?warning=${encodeURIComponent('You are already logged in.')}`,
   })
 
-  return <section></section>
+  return (
+    <section className={classes.login}>
+      <div className={classes.heroImg}></div>
+    </section>
+  )
 }
 
 export const metadata: Metadata = {
