@@ -31,7 +31,7 @@ export default async function RecoverPassword() {
 
           <Link href="/login" className={classes.backLink}>
             <Image src="/assets/icons/arrow-left.svg" alt="left arrow" height={24} width={24} />
-            <p>Back</p>
+            <p>back</p>
           </Link>
           <div className={classes.formTitle}>
             <h3>Forgot PassWord ?</h3>
