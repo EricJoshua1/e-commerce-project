@@ -9,6 +9,7 @@ import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function Login() {
   await getMeUser({
@@ -17,7 +18,19 @@ export default async function Login() {
 
   return (
     <section className={classes.login}>
-      <div className={classes.heroImg}></div>
+      <div className={classes.heroImg}>
+        <Link href="/">
+          <Image
+            src="/logo-littlemore.svg"
+            alt="logo"
+            width={250}
+            height={23}
+            className={classes.logo}
+          />
+        </Link>
+      </div>
+
+      <div></div>
     </section>
   )
 }
