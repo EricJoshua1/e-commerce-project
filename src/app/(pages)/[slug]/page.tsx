@@ -3,13 +3,17 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Page } from '../../../payload/payload-types'
+import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
 import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
+import { Gutter } from '../../_components/Gutter'
+import { CustomHero } from '../../_heros/CustomHero'
+
+import classes from './index.module.scss'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -52,11 +56,19 @@ export default async function Page({ params: { slug = 'home' } }) {
 
   return (
     <React.Fragment>
-      <Hero {...hero} />
-      <Blocks
-        blocks={layout}
-        disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-      />
+      {slug === 'home' ? (
+        <Gutter>
+          <Hero {...hero} />
+        </Gutter>
+      ) : (
+        <>
+          <Hero {...hero} />
+          <Blocks
+            blocks={layout}
+            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+          />
+        </>
+      )}
     </React.Fragment>
   )
 }
@@ -74,6 +86,7 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
+  let categories: Category[] | null = null
 
   try {
     page = await fetchDoc<Page>({
@@ -81,6 +94,8 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
       slug,
       draft: isDraftMode,
     })
+
+    categories = await fetchDocs<Category>('categories')
   } catch (error) {
     // don't throw an error if the fetch fails
     // this is so that we can render a static home page for the demo
