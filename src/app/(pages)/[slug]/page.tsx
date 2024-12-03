@@ -11,7 +11,6 @@ import { Blocks } from '../../_components/Blocks'
 import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 import { Gutter } from '../../_components/Gutter'
-import { CustomHero } from '../../_heros/CustomHero'
 
 import classes from './index.module.scss'
 
