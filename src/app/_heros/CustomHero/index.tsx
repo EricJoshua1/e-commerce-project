@@ -10,8 +10,8 @@ import classes from './index.module.scss'
 
 export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
   return (
-    <Gutter className={classes.hero}>
-      <div className={classes.content}>
+    <section className={classes.hero}>
+      <div className={classes.heroWrapper}>
         <RichText content={richText} />
         {Array.isArray(links) && links.length > 0 && (
           <ul className={classes.links}>
@@ -38,6 +38,6 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
           </Fragment>
         )}
       </div>
-    </Gutter>
+    </section>
   )
 }
