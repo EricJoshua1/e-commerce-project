@@ -35,7 +35,7 @@ export const hero: Field = {
         },
         {
           label: 'Custom Hero',
-          value: 'CustomHero'
+          value: 'customHero'
         }
       ],
     },
