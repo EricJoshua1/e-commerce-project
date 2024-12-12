@@ -12,7 +12,7 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
   return (
     <section className={classes.hero}>
       <h1>THIS IS OUR CUSTOM HERO</h1>
-      {/* <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})` }}>
+      <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})` }}>
         <div className={classes.heroTextBox}>
           <RichText content={richText} />
           {Array.isArray(links) && links.length > 0 && (
@@ -27,7 +27,7 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
             </ul>
           )}
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
