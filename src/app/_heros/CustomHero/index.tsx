@@ -11,7 +11,7 @@ import classes from './index.module.scss'
 export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
   return (
     <section className={classes.hero}>
-      <h1>THIS IS OUR CUSTOM HERO</h1>
+      {/* <h1>THIS IS OUR CUSTOM HERO</h1> */}
       <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})` }}>
         <div className={classes.heroTextBox}>
           <RichText content={richText} />
